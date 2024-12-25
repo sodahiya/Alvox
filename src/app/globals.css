@@ -2,6 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes shine {
+  from {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  to {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shine {
+  animation: shine 2s infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 40;
+  animation: draw 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes draw-check {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-check {
+  stroke-dasharray: 20;
+  animation: draw-check 0.3s ease-out forwards;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
