@@ -242,15 +242,15 @@ export default function Home() {
       </div>
 
       <Head>
-        <title>Neural Voice - Advanced AI-Powered Speech Synthesis</title>
+        <title>Alvox - Advanced AI-Powered Speech Synthesis</title>
         <meta name="description" content="Convert text to natural-sounding speech using advanced AI" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/AlvoxIcon.ico" />
       </Head>
 
       <main className="relative z-10 min-h-screen p-8">
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold text-white mb-2 tracking-tight">
-            Neural Voice
+            Alvox
           </h1>
           <p className="text-violet-200/80">Advanced AI-Powered Speech Synthesis</p>
         </div>
@@ -327,6 +327,29 @@ export default function Home() {
                 {isPlaying && (
                   <div className="absolute inset-0 rounded-full animate-ping bg-violet-400/20"></div>
                 )}
+              </button>
+
+              {/* Generate Button */}
+              <button
+                onClick={handleSpeak}
+                disabled={!text || isGenerating}
+                className="group relative w-16 h-16 flex items-center justify-center rounded-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 overflow-hidden"
+                title="Generate Speech"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  className="w-6 h-6 text-white"
+                >
+                  <path fillRule="evenodd" clipRule="evenodd" d="M15.0614 9.67972L16.4756 11.0939L17.8787 9.69083L16.4645 8.27662L15.0614 9.67972ZM16.4645 6.1553L20 9.69083L8.6863 21.0045L5.15076 17.469L16.4645 6.1553Z" fill="#1F2328"/>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M11.364 5.06066L9.59619 6.82843L8.53553 5.76777L10.3033 4L11.364 5.06066ZM6.76778 6.82842L5 5.06067L6.06066 4L7.82843 5.76776L6.76778 6.82842ZM10.3033 10.364L8.53553 8.5962L9.59619 7.53554L11.364 9.3033L10.3033 10.364ZM7.82843 8.5962L6.06066 10.364L5 9.3033L6.76777 7.53554L7.82843 8.5962Z" fill="#1F2328"/>
+                </svg>
+                
+                {/* Hover effect */}
+                <div className="absolute inset-0 rounded-full bg-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </button>
 
               {/* Right Visualizer */}
